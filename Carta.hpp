@@ -6,6 +6,7 @@
 using namespace std;
 
 class Carta {
+	
 private:
 	int _numeroPontosPadrao;
 	string _naipe;
