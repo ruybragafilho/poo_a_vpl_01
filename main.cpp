@@ -13,6 +13,8 @@ int main() {
 	cin >> numero_cartas_por_jogador;
 	
 	Partida *p = new Partida(numero_jogadores);
+
+	Jogador* jog;
 	
 	string nomeJogador;
 	int numero_pontos_carta;
@@ -31,5 +33,6 @@ int main() {
 	
 	Jogador vencedor = p->getCampeao();
 	cout << vencedor.getNomeJogador() << endl;
+
 	return 0;
 }

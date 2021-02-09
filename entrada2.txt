@@ -1,0 +1,17 @@
+4 3
+João
+4 ouros
+6 copas
+2 paus
+Maria
+1 espadas
+2 ouros
+2 espadas
+Vitor
+5 ouros
+5 paus
+1 copas
+Marcos
+1 paus
+3 paus
+2 ouros
