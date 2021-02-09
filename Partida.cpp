@@ -23,25 +23,26 @@ Partida::~Partida()  {
 void Partida::addJogadorCarta(string nomeJogador, int numero_pontos_carta, string naipe)  {
 
     Carta c(numero_pontos_carta, naipe);
-    bool achou = false;
-    int i;
-
-    // Procura pelo jogador que recebera a carta
-    for( i=0;  i < this->_atualSize;  ++i )  {
-
-        if( this->_jogadores[i].getNomeJogador() == nomeJogador )  {
-            achou = true;
-            break;
-        }
-    }
  
-    if( !achou )  {
+    // Se ainda nao ha jogadores na partida, seta o primeiro e da a primeira carta para ele
+    if (this->_atualSize == 0) {
+        
+        this->_jogadores[ this->_atualSize ].setNomeJogador( nomeJogador );  
+        this->_jogadores[ this->_atualSize ].adicionaCarta( c );
         ++(this->_atualSize);
-        this->_jogadores[i].setNomeJogador( nomeJogador );
+        return; 
     }
-            
+
+
+    // Verifica se a proxima carta não é para o jogador atual. Se não for, seta o próximo jogador
+    if( this->_jogadores[ this->_atualSize - 1 ].getNomeJogador() != nomeJogador )  {
+        
+        this->_jogadores[ this->_atualSize ].setNomeJogador( nomeJogador );        
+        ++(this->_atualSize);
+    }
+
     // Da a carta ao jogador        
-    this->_jogadores[i].adicionaCarta( c );
+    this->_jogadores[ this->_atualSize - 1 ].adicionaCarta( c ); 
 }
 
 
